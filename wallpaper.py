@@ -1,6 +1,6 @@
 from requests import get
 from ctypes import windll
-from os import path, getcwd, remove
+from os import path, getcwd
 from playwright.sync_api import sync_playwright
 
 URI = "https://apod.nasa.gov/apod/astropix.html"
@@ -20,4 +20,3 @@ with open("wallpaper.png", "wb") as file:
     file.write(image)
 
 windll.user32.SystemParametersInfoW(20, 0, imagePath, 0)
-remove(imagePath)
